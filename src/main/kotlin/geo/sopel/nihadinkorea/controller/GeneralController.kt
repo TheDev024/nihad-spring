@@ -9,4 +9,7 @@ import org.springframework.web.bind.annotation.RestController
 class GeneralController {
     @GetMapping("/nihadin-kefi")
     fun nihadinKefi(): String = "Eladi!"
+
+    @GetMapping("/qaranliq")
+    fun qaranliq(): String = "Get o yanda oyna"
 }

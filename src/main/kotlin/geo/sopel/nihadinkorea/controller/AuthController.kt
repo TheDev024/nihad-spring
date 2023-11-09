@@ -1,5 +1,6 @@
 package geo.sopel.nihadinkorea.controller
 
+import geo.sopel.nihadinkorea.dao.LoginDao
 import geo.sopel.nihadinkorea.dao.RegisterDao
 import geo.sopel.nihadinkorea.service.AppUserService
 import org.springframework.web.bind.annotation.PostMapping
@@ -12,4 +13,7 @@ import org.springframework.web.bind.annotation.RestController
 class AuthController(private val appUserService: AppUserService) {
     @PostMapping("/register")
     fun register(@RequestBody registerDao: RegisterDao) = appUserService.register(registerDao)
+
+    @PostMapping("/login")
+    fun login(@RequestBody loginDao: LoginDao) = appUserService.login(loginDao)
 }

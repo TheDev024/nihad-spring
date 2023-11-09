@@ -18,7 +18,9 @@ data class AppUser(
     @Column(unique = true)
     private val username: String? = null,
     private val password: String? = null,
-    private val role: String? = null
+    private val role: String? = null,
+    @JsonIgnore
+    var loginAttempts: Long = 1
 ) : UserDetails {
     override fun getAuthorities(): List<GrantedAuthority> = listOf(SimpleGrantedAuthority("ROLE_$role"))
 
